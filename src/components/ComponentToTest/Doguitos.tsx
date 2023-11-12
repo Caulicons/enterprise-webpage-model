@@ -1,29 +1,34 @@
-import type { GetStaticProps, InferGetServerSidePropsType } from 'next';
-import next from 'next';
-type responseType = number;
+type responseType = {
+  message: string;
+  status: string;
+};
 
 export default async function Doguitos() {
-  const dynamicNumberJson = await fetch(
-    'https://www.randomnumberapi.com/api/v1.0/random'
+  /* Dynamic */
+  const staticDoguitoJson = await fetch(
+    'https://dog.ceo/api/breeds/image/random'
   );
-  const dynamicNumber: responseType = await dynamicNumberJson.json();
+  const staticDoguito: responseType = await staticDoguitoJson.json();
 
-  const staticNumber = await getStaticNumber();
-  return (
-    <div>
-      <p>dynamicNumber: {dynamicNumber}</p>
-      <p>staticNumber: {staticNumber}</p>
-    </div>
-  );
-}
-
-async function getStaticNumber() {
-  const staticNumberJson = await fetch(
-    'https://www.randomnumberapi.com/api/v1.0/random',
+  /* Static */
+  const dynamicDoguitoJson = await fetch(
+    'https://dog.ceo/api/breeds/image/random',
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 5 },
     }
   );
-  const staticNumber: responseType = await staticNumberJson.json();
-  return staticNumber;
+  const dynamicDoguito: responseType = await dynamicDoguitoJson.json();
+
+  return (
+    <div>
+      <h1>
+        dynamicDoguito:{' '}
+        <img src={dynamicDoguito.message} alt={dynamicDoguito.status} />
+      </h1>
+      <h1>
+        staticDoguito:{' '}
+        <img src={staticDoguito.message} alt={staticDoguito.status} />
+      </h1>
+    </div>
+  );
 }
