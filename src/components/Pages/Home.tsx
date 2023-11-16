@@ -1,17 +1,23 @@
-import Section from '../atoms/Section';
+'use client';
+import T from '../atoms/Typography';
+import Banner from '../Molecules/Banner/Banner';
+import TopicsHome from '../Organisms/Sections/TopicsHome';
+import MoreInfoHome from '../Organisms/Sections/MoreInfoHome';
 
 export default function Home() {
   return (
-    <Section
-    /*   style={{
-        backgroundImage: ,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        height: '100vh',
-        width: '100%',
-      }} */
-      className='bg-primary'
-    ></Section>
+    /* Tag to wrap all the content */
+    <main>
+      <Banner animation={true}>
+        <T variant='p' styles='slogan'>
+          Loren inpsum
+        </T>
+        <T variant='h1' styles='h1'>
+          Lorem ipsum dolor sit amet, consectetur adispcing elit
+        </T>
+      </Banner>
+      <TopicsHome />
+      <MoreInfoHome />
+    </main>
   );
 }
