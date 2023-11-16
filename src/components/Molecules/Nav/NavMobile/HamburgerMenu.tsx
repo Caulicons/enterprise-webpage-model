@@ -18,6 +18,7 @@ export default function HamburgerMenu() {
       <AnimatePresence>
         {isOpen && (
           <>
+          {/* Apply the gray overlay */}
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               animate={{

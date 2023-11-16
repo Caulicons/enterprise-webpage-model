@@ -4,7 +4,7 @@ import HamburgerMenu from './HamburgerMenu';
 
 export default function NavMobile() {
   return (
-    <div className='flex w-full items-center justify-between md:hidden '>
+    <div className='flex w-full items-center justify-between md:hidden z-10'>
       <Image
         src='/assets/images/Logo/logoIcon.png'
         alt='logo'
