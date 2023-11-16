@@ -17,6 +17,15 @@ const config: Config = {
         textSoft: 'rgba(var(--textSoft), <alpha-value>)',
         textBold: 'rgba(var(--textBold), <alpha-value>)',
       },
+      keyframes: {
+        zoom: {
+          '0%': { transform: 'scale(1.2)' },
+          '100%': { transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        zoom: 'zoom 10s ease-in-out infinite',
+      },
     },
     theme: {
       screens: {
