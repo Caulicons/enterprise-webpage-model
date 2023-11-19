@@ -4,14 +4,14 @@ import routes from '../../../../../data/routes';
 
 export default function HeaderDesktop() {
   return (
-    <div className=' hidden w-full items-center justify-between md:flex'>
+    <div className=' hidden w-full items-center justify-between md:flex '>
       <Image
         src='/assets/images/Logo/logo.png'
         alt='logo'
         width={215}
         height={215}
         className='hidden md:flex'
-      ></Image>
+      />
       <div>
         <ul className='flex'>
           {routes.map((route) => (

@@ -4,7 +4,7 @@ import HamburgerMenu from './HamburgerMenu';
 
 export default function HeaderMobile() {
   return (
-    <div className='flex w-full items-center justify-between md:hidden z-10'>
+    <div className='flex w-full items-center justify-between md:hidden'>
       <Image
         src='/assets/images/Logo/logoIcon.png'
         alt='logo'

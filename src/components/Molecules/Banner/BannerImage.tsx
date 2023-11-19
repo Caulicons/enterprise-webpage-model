@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 
 export default function BannerImage() {
-  const [loaded, setLoaded] = useState(false);
   const [banner, setBanner] = useState('01');
 
   useEffect(() => {
@@ -23,6 +22,7 @@ export default function BannerImage() {
       clearInterval(interval);
     };
   }, [banner]);
+
   return (
     <>
       <div
@@ -36,7 +36,7 @@ export default function BannerImage() {
           transition: 'all 1.2s ease-in-out',
           position: 'relative',
         }}
-        className='animate-zoom bg-gradient-to-r from-primary to-secondary'
+        className='animate-zoom bg-gradient-to-r from-primary to-secondary '
       >
         <div className='h-[90.5vh] w-screen bg-secondary/75' />
       </div>

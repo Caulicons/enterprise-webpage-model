@@ -13,7 +13,7 @@ export default function HamburgerMenu() {
 
   useClickAway(ref, () => setIsOpen(false));
   return (
-    <div className='rounded-xl bg-primary text-white hover:bg-accent  lg:hidden'>
+    <nav className='rounded-xl bg-primary text-white hover:bg-accent lg:hidden'>
       <Hamburger toggled={isOpen} size={20} toggle={setIsOpen} />
       <AnimatePresence>
         {isOpen && (
@@ -101,6 +101,6 @@ export default function HamburgerMenu() {
           </>
         )}
       </AnimatePresence>
-    </div>
+    </nav>
   );
 }
