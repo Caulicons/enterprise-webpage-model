@@ -5,7 +5,7 @@ import cn from '../../../utils/cn';
 type animationProps = {
   direction?: 'left-to-right' | 'right-to-left' | 'up' | 'down';
   reference?: MutableRefObject<null>;
-  once: boolean;
+  once?: boolean;
   customAnimation?: {
     start: AnimationType;
     end: AnimationType;

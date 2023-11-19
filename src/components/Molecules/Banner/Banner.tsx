@@ -1,7 +1,7 @@
 'use client';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useMemo, useState } from 'react';
+import {  motion } from 'framer-motion';
 import cn from '../../../../utils/cn';
+import BannerImage from './BannerImage';
 
 type BannerProps = {
   animation?: boolean;
@@ -11,44 +11,9 @@ export default function Banner({
   className,
   animation,
 }: BannerProps) {
-  const banners = useMemo(() => ['01', '02'], []);
-  const [banner, setBanner] = useState(banners[0]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      switch (banner) {
-        case '01':
-          setBanner(banners[1]);
-          break;
-        case '02':
-          setBanner(banners[0]);
-          break;
-      }
-    }, 8000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [banner, banners]);
   return (
-    <section className='relative overflow-hidden'>
-      {/* Tag to apply the background images */}
-      <div
-        style={{
-          backgroundImage: `url('./assets/images/Banner/banner${banner}.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          height: '90.5vh',
-          width: '100%',
-          transition: 'all 1.2s ease-in-out',
-          position: 'relative',
-        }}
-        className='animate-zoom'
-      >
-        {/* Tag to apply the overlay */}
-        <div className='h-[90.5vh] w-screen bg-secondary/75' />
-      </div>
+    <section className='relative overflow-hidden h-[90.5vh]'>
+      <BannerImage />
       {animation ? (
         <motion.div
           initial={{ opacity: 0, top: 0 }}

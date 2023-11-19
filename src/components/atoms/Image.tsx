@@ -7,6 +7,7 @@ export default function Image({
   className,
   width,
   height,
+  ...props
 }: ImageProps) {
   return (
     <NextImage
@@ -15,6 +16,7 @@ export default function Image({
       width={width}
       height={height}
       className={className}
+      {...props}
     />
   );
 }

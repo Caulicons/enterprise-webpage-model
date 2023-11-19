@@ -19,12 +19,13 @@ const config: Config = {
       },
       keyframes: {
         zoom: {
-          '0%': { transform: 'scale(1.2)' },
-          '100%': { transform: 'scale(1)' },
+          '0%': { transform: 'scale(1.3)' },
+          '50%': { transform: 'scale(1.15)' },
+          '100%': { transform: 'scale(1.3)' },
         },
       },
       animation: {
-        zoom: 'zoom 10s ease-in-out infinite',
+        zoom: 'zoom 15s ease-in-out infinite',
       },
     },
     theme: {
