@@ -1,22 +1,40 @@
-import { useAnimation, motion, useInView } from 'framer-motion';
-import { useEffect, useRef, useMemo, MutableRefObject } from 'react';
+import { useAnimation, motion, useInView, AnimationType } from 'framer-motion';
+import { useEffect, useRef, MutableRefObject } from 'react';
 import cn from '../../../utils/cn';
 
 type animationProps = {
   direction?: 'left-to-right' | 'right-to-left' | 'up' | 'down';
   reference?: MutableRefObject<null>;
+  once: boolean;
+  customAnimation?: {
+    start: AnimationType;
+    end: AnimationType;
+  };
 } & React.HTMLAttributes<HTMLDivElement>;
 export default function Animation({
   children,
   className,
   direction = 'left-to-right',
   reference,
+  once = true,
+  customAnimation,
+  ...props
 }: animationProps) {
   const ref = useRef(null);
-  const inView = useInView(reference ? reference : ref, {once: true});
+  const animation = useAnimation();
+  const inView = useInView(reference ? reference : ref, { once });
 
-  const directions = useMemo(() => {
-    return {
+  useEffect(() => {
+    if (customAnimation) {
+      if (inView) {
+        animation.start(customAnimation.start);
+      } else {
+        animation.start(customAnimation.end);
+      }
+      return;
+    }
+
+    const directions = {
       'left-to-right': {
         x: '-90vw',
       },
@@ -30,9 +48,7 @@ export default function Animation({
         y: '90vh',
       },
     };
-  }, []);
-  const animation = useAnimation();
-  useEffect(() => {
+
     if (inView) {
       animation.start({
         x: 0,
@@ -44,14 +60,13 @@ export default function Animation({
           ease: 'easeInOut',
         },
       });
-    }
-    if (!inView) {
+    } else {
       animation.start({
         ...directions[direction],
         opacity: 0,
       });
     }
-  }, [inView, animation, direction, directions]);
+  }, [inView, animation, direction, customAnimation]);
 
   return (
     <motion.div
