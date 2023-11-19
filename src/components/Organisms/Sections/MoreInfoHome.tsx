@@ -5,6 +5,7 @@ import T from '@/components/atoms/Typography';
 import { GiFullPizza } from 'react-icons/gi';
 import { MdAutoGraph } from 'react-icons/md';
 import { BsBank } from 'react-icons/bs';
+import Animation from '@/components/atoms/Animation';
 
 export default function MoreInfoHome() {
   return (
@@ -48,7 +49,10 @@ export default function MoreInfoHome() {
         <T variant='h3' styles='h2'>
           Lorem ipsum dolor sit amet
         </T>
-        <div className='flex flex-col gap-8 md:flex-row'>
+        <Animation
+          direction='left-to-right'
+          className='flex flex-col gap-8 md:flex-row'
+        >
           <Card Icon={GiFullPizza}>
             <T styles={'pSoft'}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -73,7 +77,7 @@ export default function MoreInfoHome() {
               More infos
             </Button>
           </Card>
-        </div>
+        </Animation>
       </div>
     </section>
   );

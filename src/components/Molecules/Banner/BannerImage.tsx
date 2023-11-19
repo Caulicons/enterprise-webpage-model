@@ -34,11 +34,11 @@ export default function BannerImage() {
           height: '100%',
           width: '100%',
           transition: 'all 1.2s ease-in-out',
-          position: 'relative',
+          position: 'absolute',
         }}
         className='animate-zoom bg-gradient-to-r from-primary to-secondary '
       >
-        <div className='h-[90.5vh] w-screen bg-secondary/75' />
+        <div className='h-screen w-screen bg-secondary/75' />
       </div>
     </>
   );

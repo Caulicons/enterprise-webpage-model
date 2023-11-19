@@ -1,18 +1,19 @@
-'use client';
-import {  motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import cn from '../../../../utils/cn';
 import BannerImage from './BannerImage';
 
 type BannerProps = {
+  parentClass?: string;
   animation?: boolean;
 } & React.HTMLAttributes<HTMLDivElement>;
 export default function Banner({
   children,
   className,
+  parentClass,
   animation,
 }: BannerProps) {
   return (
-    <section className='relative overflow-hidden h-[90.5vh]'>
+    <section className={cn('relative h-screen overflow-hidden', parentClass)}>
       <BannerImage />
       {animation ? (
         <motion.div
