@@ -1,3 +1,4 @@
+'use client';
 import { useAnimation, motion, useInView, AnimationType } from 'framer-motion';
 import { useEffect, useRef, MutableRefObject } from 'react';
 import cn from '../../../utils/cn';
@@ -36,16 +37,16 @@ export default function Animation({
 
     const directions = {
       'left-to-right': {
-        x: '-90vw',
+        x: '-87vw',
       },
       'right-to-left': {
-        x: '90vw',
+        x: '87vw',
       },
       up: {
-        y: '-90vh',
+        y: '-87vh',
       },
       down: {
-        y: '90vh',
+        y: '87vh',
       },
     };
 

@@ -14,11 +14,13 @@ export default function HamburgerMenu() {
   useClickAway(ref, () => setIsOpen(false));
   return (
     <nav className='rounded-xl bg-primary text-white hover:bg-accent lg:hidden'>
-      <Hamburger toggled={isOpen} size={20} toggle={setIsOpen} />
+      <div className=''>
+        <Hamburger toggled={isOpen} size={20} toggle={setIsOpen} />
+      </div>
       <AnimatePresence>
         {isOpen && (
           <>
-          {/* Apply the gray overlay */}
+            {/* Apply the gray overlay */}
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               animate={{
@@ -87,7 +89,7 @@ export default function HamburgerMenu() {
                       <Link
                         onClick={() => setIsOpen((prev) => !prev)}
                         className={
-                          ' flex w-4/5 items-center justify-between p-3 text-xl font-bold text-white hover:border-b-2 hover:border-primary hover:text-primary transition duration-300 ease-in-out '
+                          ' flex w-4/5 items-center justify-between p-3 text-xl font-bold text-white transition duration-300 ease-in-out hover:border-b-2 hover:border-primary hover:text-primary '
                         }
                         href={route.href}
                       >

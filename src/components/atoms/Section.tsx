@@ -9,12 +9,12 @@ type SectionProps = {
 const variants = cva('h-screen', {
   variants: {
     size: {
-      medium: 'w-[1280px]',
-      large: 'w-[1440px]',
+      medium: 'max-w-[1280px]',
+      large: 'max-w-[1440px]',
     },
   },
   defaultVariants: {
-    size: 'medium',
+    size: 'large',
   },
 });
 
@@ -22,7 +22,7 @@ export default function Section({
   className,
   children,
   childrenClassName,
-  size = 'medium',
+  size = 'large',
 }: SectionProps) {
   return (
     <section className={className}>

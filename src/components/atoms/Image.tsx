@@ -1,4 +1,5 @@
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
+import React from 'react';
 
 type ImageProps = {} & NextImageProps;
 export default function Image({

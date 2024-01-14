@@ -1,6 +1,7 @@
-import Image from '@/components/atoms/Image';
 import cn from '../../../../utils/cn';
 import { IconType } from 'react-icons';
+import React from 'react';
+import Image from '@/components/atoms/Image';
 
 type CartProps = {
   Icon?: IconType;
@@ -15,8 +16,7 @@ export default function Card({
   iconColor = 'primary',
   imgURL = '',
 }: CartProps) {
-
-  if(Icon &&  imgURL) {
+  if (Icon && imgURL) {
     throw new Error('Only one of Icon and imgURL can be provided');
   }
 
@@ -32,7 +32,15 @@ export default function Card({
           <Icon fontSize={50} />
         </span>
       )}
-      {imgURL && <Image src={imgURL} alt='logo' width={40} height={40} className={'rounded-full'}/>}
+      {imgURL && (
+        <Image
+          src={imgURL}
+          alt='logo'
+          width={70}
+          height={70}
+          className={'h-20 w-20 rounded-full'}
+        />
+      )}
       {children}
     </div>
   );

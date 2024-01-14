@@ -11,12 +11,13 @@ type ButtonProps = {
 >;
 
 const variants = cva(
-  'w-max rounded-md px-4 py-2 text-lg font-bold transition-all duration-500 ease-in-out',
+  'w-max rounded-md px-4 py-2 text-lg font-bold transition-all duration-500 ease-out',
   {
     variants: {
       variant: {
         primary: 'bg-primary text-white hover:bg-secondary',
-        secondary: 'bg-transparent text-primary hover:bg-primary hover:text-white',
+        secondary:
+          'bg-transparent text-primary hover:bg-primary hover:text-white',
       },
     },
     defaultVariants: {

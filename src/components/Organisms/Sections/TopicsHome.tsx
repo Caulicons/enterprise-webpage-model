@@ -3,11 +3,15 @@ import T from '@/components/atoms/Typography';
 import { FaIdCard } from 'react-icons/fa6';
 import { SlGraph } from 'react-icons/sl';
 import Animation from '@/components/atoms/Animation';
+import Section from '@/components/atoms/Section';
 export default function TopicsHome() {
   const cards = [{}];
 
   return (
-    <section className='grid h-full min-h-screen w-full place-content-center gap-8 bg-gradient-to-b from-secondary/75 to-white px-6 py-16 text-center'>
+    <Section
+      className='grid place-content-center bg-gradient-to-b from-secondary/75 to-white '
+      childrenClassName='grid h-full min-h-screen w-full place-content-center gap-8   text-center'
+    >
       <T variant='p' styles='slogan'>
         Loren inpsum
       </T>
@@ -40,6 +44,6 @@ export default function TopicsHome() {
           </T>
         </Card>
       </Animation>
-    </section>
+    </Section>
   );
 }
