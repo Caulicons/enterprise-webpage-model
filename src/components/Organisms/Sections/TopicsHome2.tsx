@@ -9,24 +9,24 @@ import { MdAutoGraph } from 'react-icons/md';
 export default function TopicsHome2() {
   const carts = [
     {
+      id: 1,
       icon: GiFullPizza,
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     },
     {
+      id: 2,
       icon: MdAutoGraph,
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     },
     {
+      id: 3,
       icon: BsBank,
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     },
   ];
 
   return (
-    <Animation
-
-      className='grid place-content-center bg-gradient-to-b from-gray-700 to-secondary px-12 py-14 text-center rounded-b-[75px]'
-    >
+    <Animation className='grid place-content-center rounded-b-[75px] bg-gradient-to-b from-gray-700 to-secondary px-12 py-14 text-center'>
       <div className='flex flex-col gap-9 '>
         <T variant='p' styles='slogan'>
           Lorem ipsum
@@ -36,7 +36,7 @@ export default function TopicsHome2() {
         </T>
         <div className='flex flex-col gap-8 md:flex-row'>
           {carts.map((cart) => (
-            <Card key={cart.icon} Icon={cart.icon}>
+            <Card key={cart.id} Icon={cart.icon}>
               <T styles={'pSoft'}>{cart.description}</T>
               <Button type='button' icon={'💡'} variant='secondary'>
                 More infos
