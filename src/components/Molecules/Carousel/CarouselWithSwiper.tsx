@@ -54,14 +54,13 @@ export default function CarouselWithSwiper({}) {
     <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination]}
-      spaceBetween={50}
       slidesPerView={'auto'}
       centeredSlides={true}
       autoplay={{ delay: 2000 }}
       breakpoints={{
         640: {
           slidesPerView: 1,
-          spaceBetween: 20,
+          spaceBetween: 10,
         },
         768: {
           slidesPerView: 2,
@@ -75,7 +74,7 @@ export default function CarouselWithSwiper({}) {
       pagination={{ clickable: true }}
       loop={true}
       scrollbar={{ draggable: true }}
-      className='flex h-[450px] place-content-center items-center justify-center md:w-11/12'
+      className='flex h-[450px] w-full place-content-center items-center justify-center'
     >
       {slides.map((slide) => (
         <SwiperSlide key={slide.id}>
@@ -85,7 +84,7 @@ export default function CarouselWithSwiper({}) {
             key={slide.id}
             width={400}
             height={400}
-            className='w-full h-full object-cover'
+            className='h-full w-full object-cover'
           />
         </SwiperSlide>
       ))}
