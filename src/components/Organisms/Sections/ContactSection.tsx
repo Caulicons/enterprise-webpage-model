@@ -5,10 +5,10 @@ import T from '@/components/atoms/Typography';
 export default function ContactSection() {
   return (
     <Section
-      className='h-full flex-col  bg-white px-12 py-12 md:flex-row'
+      className='mx-auto flex h-full w-11/12 flex-col bg-white md:flex-row md:px-12 md:py-12'
       childrenClassName='h-full flex flex-col gap-12 md:flex-row min-h-screen items-center justify-center'
     >
-      <div className='flex w-4/6 flex-col gap-11'>
+      <div className=' flex  flex-col gap-11'>
         <T variant='p' styles='slogan'>
           Lorem ipsum
         </T>
