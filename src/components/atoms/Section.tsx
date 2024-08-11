@@ -6,7 +6,7 @@ type SectionProps = {
   childrenClassName?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const variants = cva('min-h-screen h-fit px-4 py-10', {
+const variants = cva('min-h-screen h-fit px-4 py-10 mx-auto', {
   variants: {
     size: {
       medium: 'max-w-[1280px]',
